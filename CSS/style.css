@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+input {
+    outline: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.208);
+}
+select {
+    margin-right: 10px;
+}
+h3{
+    color: red;
+}
+button {
+    padding: 10px 25px;
+    margin-top: 10px;
+    border: 1px solid pink;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    transition: all .5s;
+}
+button:hover {
+    background-color: black;
+    color: white ;
+}
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+.text__1 {
+    margin-right: 20px;
+}
+.bottom {
+    margin-top: 15px;
+    color: red;
+}
+#result2 {
+    display: none;
+}
+#result3 {
+    display: none;
+}
+.bottom2 {
+    margin-top: 15px;
+    color: red;
+}
+#cardHidden {
+    display: none;
+}

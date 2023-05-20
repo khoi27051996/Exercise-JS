@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập JS - Buổi 5</title>
+    <!-- BS 4  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- MAIN CSS  -->
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+
+    <h1 class="text-center" style="font-size: 40px;">BÀI TẬP BUỔI 5</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active" id="v-pills-home-tab" data-toggle="pill" data-target="#v-pills-home"
+                        type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Exercive 1</button>
+                    <button class="nav-link" id="v-pills-profile-tab" data-toggle="pill" data-target="#v-pills-profile"
+                        type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Exercive
+                        2</button>
+                    <button class="nav-link" id="v-pills-messages-tab" data-toggle="pill"
+                        data-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+                        aria-selected="false">Exercive 3</button>
+                    <button class="nav-link" id="v-pills-settings-tab" data-toggle="pill"
+                        data-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
+                        aria-selected="false">Exercive 4</button>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <div class="content">
+                            <h3>Quản Lý Tuyển Sinh</h3>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input id="benchmark" type="text" placeholder="Benchmark">
+                                    <br>
+                                    <input id="subjec1" type="text" placeholder="Subjec 1">
+                                    <br>
+                                    <input id="subjec2" type="text" placeholder="subjec 2">
+                                    <br>
+                                    <input id="subjec3" type="text" placeholder="subjec 3">
+                                    <br>
+                                    <select name="" id="area">
+                                        <option value="#">Khu Vực</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                        <option value="X">Không</option>
+                                    </select>
+                                    <select name="" id="type">
+                                        <option value="#">Đối Tượng</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="0">Không</option>
+                                    </select>
+                                    <br>
+                                    <button id="btnEx1">Result</button>
+                                </div>
+                                <div class="col-6 right">
+                                    <p id="show1" class="text__1"></p>
+                                    <p id="show2"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+                        <div class="title">
+                            <h3>Tiền Điện</h3>
+                        </div>
+                        <div class="input">
+                            <input id="user" type="text" placeholder="Name">
+                            <input id="numberKw" type="text" placeholder="kW">
+                            <br>
+                            <button id="btnEx2">Show Bill</button>
+                        </div>
+                        <div id="result2" class=" bottom">
+                            <p>Tiền điện của <span id="show3"></span> hết : <span id="show4"></span></p>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                        aria-labelledby="v-pills-messages-tab">
+                        <h3>Tính Thuế Thu Nhập Cá Nhân</h3>
+                        <input id="user2" type="text" placeholder="Họ Và Tên">
+                        <input id="totalIncome" type="number" placeholder="Tổng Thu Nhập / Năm">
+                        <input id="numberDependents" type="number" placeholder="Số Người Phụ Thuộc">
+                        <br>
+                            <button id="btnEx3">Tính Thuế</button>
+                            <div id="result3" class=" bottom2">
+                                <p>Tiền Thuế của <span id="show6" ></span> phải nộp là : <span id="show5"></span></p>
+                            </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">
+                        <h3>Tính Tiền Cáp</h3>
+                        <input id="user3" type="text" placeholder="Nhập MKH">
+                        <input id="numberChannel" type="number" placeholder="Số Kênh Cao Cấp">
+                        <br>
+                        <div id="cardHidden">
+                            <input id="numberBasic" type="number" placeholder="Số Kết Nối">
+                        </div>
+                        <select class="my-3" id="typeClient" onchange="selectType()">
+                            <option value="">Select</option>
+                            <option value="guest">Guest</option>
+                            <option value="enterprise">Enterprise</option>
+                        </select>
+                        <br>
+                        <button id="btnEx4">Tính Tiền</button>
+                        <p class="mt-3">Số Tiền của <span id="show7"></span> phải trả là : <span id="show8"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BS 4  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <!-- MAIN JS  -->
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
